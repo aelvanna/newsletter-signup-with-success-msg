@@ -1,5 +1,6 @@
 @use "variables" as *;
 @use "fonts";
+@use "mixins";
 
 /* Resets margin and padding for whole page & changes
 /* to border-box box-sizing */
@@ -17,14 +18,37 @@ body {
   color: $blue-700;
   line-height: 1.5;
   background-color: $white;
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "main" "footer";
+  align-items: start; // Prevents grid items from stretching to full height by default.
+
+  @include mixins.breakpoint($breakpoint-tablet) {
+    grid-template-rows: auto;
+    background-color: $blue-700;
+    align-content: center;
+    justify-items: center;
+    padding: $space-lg;
+  }
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center; // Centers content horizontally
-  justify-content: center; // Centers content vertically
-  min-height: 100vh; // Ensures main takes at least full viewport height
+  width: 100%;
+  grid-area: main;
+
+  @include mixins.breakpoint($breakpoint-tablet) {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    grid-template-areas: "form header";
+
+    max-width: 55rem;
+    background-color: $white;
+    border-radius: 2rem;
+    padding: $space-lg;
+    gap: 2rem;
+  }
 }
 
 h1,
@@ -35,22 +59,41 @@ h2 {
 }
 
 .header {
+  @include mixins.breakpoint($breakpoint-tablet) {
+    grid-area: header;
+  }
+
   &__image {
     display: block; // Prevents extra space below the image
     width: 100%; // Makes the image responsive to the container width
     height: auto;
+
+    @include mixins.breakpoint($breakpoint-tablet) {
+      height: 100%;
+      object-fit: cover;
+      border-radius: $space-md;
+      padding-inline-start: $space-lg; // Adds padding to the left side
+    }
   }
 }
 
 .form {
-  padding: 1.5rem; // Adds padding to the form content, keeping the header full-width
-
+  padding: $space-lg;
   &__description {
-    margin-bottom: 2.5rem; // Adds space between the text and the input fields
+    margin-bottom: $space-md;
 
     h1,
     p {
-      margin-bottom: 1.5rem; // Adds space below the heading and paragraph
+      margin-bottom: $space-lg;
+    }
+
+    p {
+      max-width: 90%; // Limits paragraph width to match design and improve readability
+    }
+
+    p,
+    li {
+      font-size: $fs-sm;
     }
   }
 
@@ -60,7 +103,7 @@ h2 {
     li {
       display: flex;
       align-items: flex-start; // Aligns icon with the top of the text
-      gap: 1rem; // Creates space between the icon and the text
+      gap: $space-md; // Creates space between the icon and the text
       margin-bottom: 0.75rem; // Space between list items
 
       &::before {
@@ -81,7 +124,7 @@ h2 {
     font-family: "Roboto Bold", sans-serif;
     font-size: $fs-sm;
     color: $color-secondary;
-    margin-bottom: 0.5rem;
+    margin-bottom: $space-xs;
   }
 
   &__field {
@@ -89,29 +132,66 @@ h2 {
     border-radius: 0.5rem;
     border: 1px solid $grey;
     background-color: transparent;
-    padding: 1rem;
-    margin-bottom: 1.5rem;
+    padding: $space-md;
+    margin-bottom: $space-lg;
   }
 
   &__button {
-    font-family: "Roboto Regular", sans-serif;
+    font-family: "Roboto Bold", sans-serif;
+    font-size: $fs-base;
     width: 100%;
     background-color: $color-secondary;
     color: $white;
-    padding: 1rem;
-    border-radius: 0.5rem;
+    padding: $space-md;
+    border-radius: $space-xs;
     border: none;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover,
+    &:focus-visible {
+      // Gradient for active-states. The colors are from the design's illustration.
+      background: linear-gradient(to right, #ff527b, #ff6a3a);
+      box-shadow: 0 $space-md 2rem rgba($color-primary, 0.5);
+      cursor: pointer;
+    }
+
+    @include mixins.breakpoint($breakpoint-desktop) {
+      font-size: $fs-sm;
+    }
+  }
+
+  @include mixins.breakpoint($breakpoint-tablet) {
+    grid-area: form;
+    padding: 0; // Reset padding on desktop, from parent .container
+    padding-inline-start: 2rem; // Add padding to the left side
+    padding-block: 2rem;
+    // Vertically center the form content within column
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
 .attribution {
   font-size: $fs-xxs;
   text-align: center;
-}
-.attribution a {
-  color: $color-link;
+  grid-area: footer;
+
+  a {
+    color: $color-link;
+  }
+
+  @include mixins.breakpoint($breakpoint-tablet) {
+    color: $white;
+    padding: 1rem 0;
+
+    a {
+      color: $grey;
+    }
+  }
 }
 
 .success-message {
-  display: none; // Hidden by default;
+  display: none; // Hidden by default
+  grid-area: main;
 }

@@ -19,11 +19,21 @@
   <body>
     <main class="container">
       <header class="header">
-        <img
-          class="header__image"
-          src="./assets/images/illustration-sign-up-mobile.svg"
-          alt=""
-        />
+        <picture>
+          <source
+            media="(min-width: 1024px)"
+            srcset="./assets/images/illustration-sign-up-desktop.svg"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcset="./assets/images/illustration-sign-up-tablet.svg"
+          />
+          <img
+            class="header__image"
+            src="./assets/images/illustration-sign-up-mobile.svg"
+            alt="An illustration showing data analytics graphs and charts on a screen."
+          />
+        </picture>
       </header>
       <form class="form" action="" method="POST">
         <!-- Sign-up form start -->
@@ -53,20 +63,20 @@
         </section>
         <!-- Sign-up form end -->
       </form>
-      <section class="success-message" aria-live="polite">
-        <!-- Success message start -->
-        <h2>Thanks for subscribing!</h2>
-        <p>
-          A confirmation email has been sent to
-          <span id="form__email">ash@loremcompany.com</span>. Please open it and
-          click the button inside to confirm your subscription.
-        </p>
-        <button type="button" class="success-message__button">
-          Dismiss message
-        </button>
-        <!-- Success message end -->
-      </section>
     </main>
+    <section class="success-message" aria-live="polite">
+      <!-- Success message start -->
+      <h2>Thanks for subscribing!</h2>
+      <p>
+        A confirmation email has been sent to
+        <span id="submitted-email">ash@loremcompany.com</span>. Please open it
+        and click the button inside to confirm your subscription.
+      </p>
+      <button type="button" class="success-message__button">
+        Dismiss message
+      </button>
+      <!-- Success message end -->
+    </section>
     <footer class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"

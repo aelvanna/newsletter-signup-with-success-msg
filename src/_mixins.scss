@@ -1,0 +1,17 @@
+@use "variables" as *;
+
+// Mixin alternative for media queries.
+// @param {variable} : $min --> The minimum breakpoint
+// @param {variable} : $max --> The maximum breakpoint
+// Variables defined in _variables.scss
+@mixin breakpoint($min, $max: null) {
+  @if $max {
+    @media (min-width: $min) and (max-width: ($max - 1px)) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $min) {
+      @content;
+    }
+  }
+}

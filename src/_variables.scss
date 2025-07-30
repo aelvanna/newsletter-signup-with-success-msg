@@ -9,9 +9,20 @@ $fs-xxl: clamp(2.44rem, 1.96vi + 1.98rem, 3.75rem);
 $fs-xxxl: clamp(3.05rem, 2.92vi + 2.37rem, 5rem);
 
 /* Color Variables */
-$color-link: hsl(228, 45%, 44%);
+$color-link: hsl(229, 21%, 56%);
 $color-primary: hsl(4, 100%, 67%);
 $color-secondary: hsl(234, 29%, 20%);
 $blue-700: hsl(235, 18%, 26%);
 $grey: hsl(0, 0%, 58%);
 $white: hsl(0, 0%, 100%);
+
+/* Spacing Variables */
+$space-xs: 0.5rem; // 8px
+$space-sm: 0.75rem; // 12px
+$space-md: 1rem; // 16px
+$space-lg: 1.5rem; // 24px
+$space-xl: 2.5rem; // 32px
+
+/* Breakpoints */
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
