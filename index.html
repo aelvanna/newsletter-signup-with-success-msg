@@ -36,7 +36,7 @@
           />
         </picture>
       </header>
-      <form class="form" action="" method="POST">
+      <form class="form" action="" method="POST" novalidate>
         <!-- Sign-up form start -->
         <section class="form__description">
           <h1>Stay updated!</h1>
@@ -48,13 +48,15 @@
           </ul>
         </section>
         <section class="form__input">
-          <label for="form__email" class="form__label">Email address</label>
+          <div class="form__label-wrapper">
+            <label for="form__email" class="form__label">Email address</label>
+            <p class="form__error-message"></p>
+          </div>
           <input
             class="form__field"
             id="form__email"
             type="email"
             placeholder="email@company.com"
-            required
             name="email"
             autocomplete="email"
           />
@@ -67,6 +69,11 @@
     </main>
     <section class="success-message" aria-live="polite">
       <!-- Success message start -->
+      <img
+        src="./assets/images/icon-success.svg"
+        alt="Checkmark image indicating a successful form submission"
+        class="success-message__icon"
+      />
       <h2>Thanks for subscribing!</h2>
       <p>
         A confirmation email has been sent to

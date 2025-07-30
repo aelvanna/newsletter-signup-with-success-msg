@@ -32,6 +32,19 @@ body {
     justify-items: center;
     padding: $space-lg;
   }
+
+  // When the body has the success state class, hide the main container
+  // and display the success message.
+  &.success-state-active {
+    .container {
+      display: none;
+    }
+
+    // Override the default 'display: none' to show the message
+    .success-message {
+      display: flex;
+    }
+  }
 }
 
 .container {
@@ -134,30 +147,27 @@ h2 {
     background-color: transparent;
     padding: $space-md;
     margin-bottom: $space-lg;
-  }
 
-  &__button {
-    font-family: "Roboto Bold", sans-serif;
-    font-size: $fs-base;
-    width: 100%;
-    background-color: $color-secondary;
-    color: $white;
-    padding: $space-md;
-    border-radius: $space-xs;
-    border: none;
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-
-    &:hover,
-    &:focus-visible {
-      // Gradient for active-states. The colors are from the design's illustration.
-      background: linear-gradient(to right, #ff527b, #ff6a3a);
-      box-shadow: 0 $space-md 2rem rgba($color-primary, 0.5);
+    &:hover {
       cursor: pointer;
     }
 
-    @include mixins.breakpoint($breakpoint-desktop) {
-      font-size: $fs-sm;
+    &:active,
+    &:focus {
+      cursor: text;
     }
+  }
+
+  &__label-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__error-message {
+    font-family: "Roboto Bold", sans-serif;
+    font-size: $fs-sm;
+    color: $color-primary;
   }
 
   @include mixins.breakpoint($breakpoint-tablet) {
@@ -169,6 +179,88 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+}
+
+/* Error state for the input field */
+.form__field.form__field--error {
+  border-color: $color-primary;
+  background-color: rgba($color-primary, 0.2);
+  color: $color-primary;
+
+  &::placeholder {
+    color: $color-primary;
+  }
+}
+
+button {
+  font-family: "Roboto Bold", sans-serif;
+  font-size: $fs-base;
+  width: 100%;
+  background-color: $color-secondary;
+  color: $white;
+  padding: $space-md;
+  border-radius: $space-xs;
+  border: none;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover,
+  &:focus-visible {
+    // Gradient for active-states. The colors are from the design's illustration.
+    background: linear-gradient(to right, #ff527b, #ff6a3a);
+    box-shadow: 0 $space-md 2rem rgba($color-primary, 0.5);
+    cursor: pointer;
+  }
+
+  @include mixins.breakpoint($breakpoint-desktop) {
+    font-size: $fs-sm;
+  }
+}
+
+.success-message {
+  // Mobile-first styles: The success message takes up the full screen.
+  display: none; // Hidden by default, shown via JS
+  flex-direction: column;
+  height: 100%; // Fill the available vertical space in the grid cell.
+  padding: 9rem 1.5rem 2.5rem; // top, horizontal, bottom padding
+  grid-area: main; // Occupy the same grid area as the main container
+
+  &__icon {
+    width: 4rem;
+    height: 4rem;
+    margin-block-end: 2rem;
+  }
+
+  h2 {
+    margin-block-end: 1.5rem;
+    line-height: 1.1;
+  }
+
+  p {
+    line-height: 1.5;
+  }
+
+  &__button {
+    // By setting margin-top to auto, we push the button to the bottom
+    // of the flex container, taking up all available space.
+    margin-top: auto;
+  }
+
+  .submitted-email {
+    font-family: "Roboto Bold", sans-serif;
+  }
+
+  @include mixins.breakpoint($breakpoint-tablet) {
+    // On larger screens, it becomes a centered card.
+    max-width: 31.25rem; // 500px
+    height: auto; // Let content define height
+    padding: 3rem 4rem;
+    border-radius: 2rem;
+    background-color: $white;
+
+    &__button {
+      margin-top: 2rem; // A fixed margin is better for the card layout.
+    }
   }
 }
 
@@ -189,16 +281,4 @@ h2 {
       color: $grey;
     }
   }
-}
-
-.success-message {
-  display: none; // Hidden by default
-  flex-direction: column;
-  align-items: left;
-  justify-content: left;
-}
-
-.form--submitted {
-  // Hidden by default, class will be added when form is submitted via JavaScript
-  display: none;
 }
