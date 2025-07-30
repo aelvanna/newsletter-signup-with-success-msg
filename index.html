@@ -12,6 +12,7 @@
       href="./assets/images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="/assets/styles/main.css" />
+    <script defer src="/src/main.js"></script>
     <title>
       Frontend Mentor | Newsletter sign-up form with success message
     </title>
@@ -54,7 +55,7 @@
             type="email"
             placeholder="email@company.com"
             required
-            name="input-email"
+            name="email"
             autocomplete="email"
           />
           <button type="submit" class="form__button">
@@ -69,8 +70,8 @@
       <h2>Thanks for subscribing!</h2>
       <p>
         A confirmation email has been sent to
-        <span id="submitted-email">ash@loremcompany.com</span>. Please open it
-        and click the button inside to confirm your subscription.
+        <span class="submitted-email"></span>. Please open it and click the
+        button inside to confirm your subscription.
       </p>
       <button type="button" class="success-message__button">
         Dismiss message
