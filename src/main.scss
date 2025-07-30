@@ -1,0 +1,117 @@
+@use "variables" as *;
+@use "fonts";
+
+/* Resets margin and padding for whole page & changes
+/* to border-box box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto Regular", sans-serif;
+  font-size: $fs-base;
+  color: $blue-700;
+  line-height: 1.5;
+  background-color: $white;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Centers content horizontally
+  justify-content: center; // Centers content vertically
+  min-height: 100vh; // Ensures main takes at least full viewport height
+}
+
+h1,
+h2 {
+  font-family: "Roboto Bold", sans-serif;
+  font-size: $fs-xxl;
+  color: $color-secondary;
+}
+
+.header {
+  &__image {
+    display: block; // Prevents extra space below the image
+    width: 100%; // Makes the image responsive to the container width
+    height: auto;
+  }
+}
+
+.form {
+  padding: 1.5rem; // Adds padding to the form content, keeping the header full-width
+
+  &__description {
+    margin-bottom: 2.5rem; // Adds space between the text and the input fields
+
+    h1,
+    p {
+      margin-bottom: 1.5rem; // Adds space below the heading and paragraph
+    }
+  }
+
+  &__list {
+    list-style: none; // Removes default bullet points
+
+    li {
+      display: flex;
+      align-items: flex-start; // Aligns icon with the top of the text
+      gap: 1rem; // Creates space between the icon and the text
+      margin-bottom: 0.75rem; // Space between list items
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 1.313rem;
+        height: 1.313rem;
+        flex-shrink: 0; // Prevents the icon from shrinking if text is long
+        background-image: url("../images/icon-list.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  &__label {
+    display: block; // Makes label take full width, forcing line break
+    font-family: "Roboto Bold", sans-serif;
+    font-size: $fs-sm;
+    color: $color-secondary;
+    margin-bottom: 0.5rem;
+  }
+
+  &__field {
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid $grey;
+    background-color: transparent;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__button {
+    font-family: "Roboto Regular", sans-serif;
+    width: 100%;
+    background-color: $color-secondary;
+    color: $white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+  }
+}
+
+.attribution {
+  font-size: $fs-xxs;
+  text-align: center;
+}
+.attribution a {
+  color: $color-link;
+}
+
+.success-message {
+  display: none; // Hidden by default;
+}

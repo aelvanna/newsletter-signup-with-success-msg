@@ -1,0 +1,120 @@
+/* Font Size Variables */
+/* Color Variables */
+/* Font Faces */
+@font-face {
+  font-family: "Roboto Regular";
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto Bold";
+  src: url("../fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+/* Resets margin and padding for whole page & changes
+/* to border-box box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto Regular", sans-serif;
+  font-size: clamp(1rem, 0.28vi + 0.93rem, 1.19rem);
+  color: hsl(235, 18%, 26%);
+  line-height: 1.5;
+  background-color: hsl(0, 0%, 100%);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+h1,
+h2 {
+  font-family: "Roboto Bold", sans-serif;
+  font-size: clamp(2.44rem, 1.96vi + 1.98rem, 3.75rem);
+  color: hsl(234, 29%, 20%);
+}
+
+.header__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.form {
+  padding: 1.5rem;
+}
+.form__description {
+  margin-bottom: 2.5rem;
+}
+.form__description h1,
+.form__description p {
+  margin-bottom: 1.5rem;
+}
+.form__list {
+  list-style: none;
+}
+.form__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+.form__list li::before {
+  content: "";
+  display: inline-block;
+  width: 1.313rem;
+  height: 1.313rem;
+  flex-shrink: 0;
+  background-image: url("../images/icon-list.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.form__label {
+  display: block;
+  font-family: "Roboto Bold", sans-serif;
+  font-size: clamp(0.8rem, 0.14vi + 0.77rem, 0.89rem);
+  color: hsl(234, 29%, 20%);
+  margin-bottom: 0.5rem;
+}
+.form__field {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid hsl(0, 0%, 58%);
+  background-color: transparent;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+.form__button {
+  font-family: "Roboto Regular", sans-serif;
+  width: 100%;
+  background-color: hsl(234, 29%, 20%);
+  color: hsl(0, 0%, 100%);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+.attribution {
+  font-size: 0.688rem;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.success-message {
+  display: none;
+}/*# sourceMappingURL=main.css.map */

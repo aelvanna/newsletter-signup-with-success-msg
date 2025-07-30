@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="/assets/styles/main.css" />
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <img
+          class="header__image"
+          src="./assets/images/illustration-sign-up-mobile.svg"
+          alt=""
+        />
+      </header>
+      <form class="form" action="" method="POST">
+        <!-- Sign-up form start -->
+        <section class="form__description">
+          <h1>Stay updated!</h1>
+          <p>Join 60,000+ product managers receiving monthly updates on:</p>
+          <ul class="form__list">
+            <li>Product discovery and building what matters</li>
+            <li>Measuring to ensure updates are a success</li>
+            <li>And much more!</li>
+          </ul>
+        </section>
+        <section class="form__input">
+          <label for="form__email" class="form__label">Email address</label>
+          <input
+            class="form__field"
+            id="form__email"
+            type="email"
+            placeholder="email@company.com"
+            required
+            name="input-email"
+            autocomplete="email"
+          />
+          <button type="submit" class="form__button">
+            Subscribe to monthly newsletter
+          </button>
+        </section>
+        <!-- Sign-up form end -->
+      </form>
+      <section class="success-message" aria-live="polite">
+        <!-- Success message start -->
+        <h2>Thanks for subscribing!</h2>
+        <p>
+          A confirmation email has been sent to
+          <span id="form__email">ash@loremcompany.com</span>. Please open it and
+          click the button inside to confirm your subscription.
+        </p>
+        <button type="button" class="success-message__button">
+          Dismiss message
+        </button>
+        <!-- Success message end -->
+      </section>
+    </main>
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://www.lizafernandez.dev">Liza Fernandez</a>.
+    </footer>
+  </body>
+</html>

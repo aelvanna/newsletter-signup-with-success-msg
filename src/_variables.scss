@@ -1,0 +1,17 @@
+/* Font Size Variables */
+$fs-xxs: 0.688rem; // 11px
+$fs-sm: clamp(0.8rem, 0.14vi + 0.77rem, 0.89rem);
+$fs-base: clamp(1rem, 0.28vi + 0.93rem, 1.19rem);
+$fs-md: clamp(1.25rem, 0.5vi + 1.13rem, 1.58rem);
+$fs-lg: clamp(1.56rem, 0.82vi + 1.37rem, 2.11rem);
+$fs-xl: clamp(1.95rem, 1.29vi + 1.65rem, 2.81rem);
+$fs-xxl: clamp(2.44rem, 1.96vi + 1.98rem, 3.75rem);
+$fs-xxxl: clamp(3.05rem, 2.92vi + 2.37rem, 5rem);
+
+/* Color Variables */
+$color-link: hsl(228, 45%, 44%);
+$color-primary: hsl(4, 100%, 67%);
+$color-secondary: hsl(234, 29%, 20%);
+$blue-700: hsl(235, 18%, 26%);
+$grey: hsl(0, 0%, 58%);
+$white: hsl(0, 0%, 100%);
