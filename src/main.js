@@ -1,5 +1,4 @@
 const form = document.querySelector(".form");
-const successMessage = document.querySelector(".success-message");
 const container = document.querySelector(".container");
 const submittedEmail = document.querySelector(".submitted-email");
 const dismissMsgButton = document.querySelector(".success-message__button");

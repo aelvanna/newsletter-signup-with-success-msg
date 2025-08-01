@@ -92,11 +92,11 @@ h2 {
 .form {
   padding: $space-lg;
   &__description {
-    margin-bottom: $space-md;
+    margin-block-end: $space-md;
 
     h1,
     p {
-      margin-bottom: $space-lg;
+      margin-block-end: $space-xs;
     }
 
     p {
@@ -116,7 +116,7 @@ h2 {
       display: flex;
       align-items: flex-start; // Aligns icon with the top of the text
       gap: $space-md; // Creates space between the icon and the text
-      margin-bottom: 0.75rem; // Space between list items
+      margin-block-end: 0.75rem; // Space between list items
 
       &::before {
         content: "";
@@ -134,9 +134,9 @@ h2 {
   &__label {
     display: block; // Makes label take full width, forcing line break
     font-family: "Roboto Bold", sans-serif;
-    font-size: $fs-sm;
+    font-size: $fs-xxs;
     color: $color-secondary;
-    margin-bottom: $space-xs;
+    margin-block-end: $space-xs;
   }
 
   &__field {
@@ -145,7 +145,7 @@ h2 {
     border: 1px solid $grey;
     background-color: transparent;
     padding: $space-md;
-    margin-bottom: $space-lg;
+    margin-block-end: $space-lg;
 
     &:hover {
       cursor: pointer;
@@ -202,6 +202,8 @@ button {
   border-radius: $space-xs;
   border: none;
   transition: background 0.3s ease, box-shadow 0.3s ease;
+  // Mixin for users who have reduced motion preferences enabled
+  @include mixins.reduced-motion();
 
   &:hover,
   &:focus-visible {

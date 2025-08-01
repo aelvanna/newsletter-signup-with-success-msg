@@ -15,3 +15,14 @@
     }
   }
 }
+
+/* Mixin for reducing animation */
+/* This mixin applies a reduced motion preference for users who have set it in their system settings.
+/* It ensures that transitions are disabled for better accessibility. */
+@mixin reduced-motion() {
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      transition: none;
+    }
+  }
+}
