@@ -92,7 +92,6 @@ h2 {
     height: 100%;
     object-fit: cover;
     border-radius: 1rem;
-    padding-inline-start: 1.5rem;
   }
 }
 
@@ -150,8 +149,7 @@ h2 {
 .form__field:hover {
   cursor: pointer;
 }
-.form__field:active,
-.form__field:focus {
+.form__field:active, .form__field:focus {
   cursor: text;
 }
 .form__label-wrapper {
@@ -197,8 +195,7 @@ button {
   border: none;
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
-button:hover,
-button:focus-visible {
+button:hover, button:focus-visible {
   background: linear-gradient(to right, #ff527b, #ff6a3a);
   box-shadow: 0 1rem 2rem rgba(255, 97.92, 86.7, 0.5);
   cursor: pointer;
@@ -263,4 +260,4 @@ button:focus-visible {
   .attribution a {
     color: hsl(0, 0%, 58%);
   }
-} /*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
