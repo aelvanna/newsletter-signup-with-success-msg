@@ -85,6 +85,7 @@ h2 {
       height: 100%;
       object-fit: cover;
       border-radius: $space-md;
+      margin-block-end: $space-xs;
     }
   }
 }
@@ -94,13 +95,13 @@ h2 {
   &__description {
     margin-block-end: $space-md;
 
-    h1,
-    p {
+    h1 {
       margin-block-end: $space-xs;
     }
 
     p {
       max-width: 90%; // Limits paragraph width to match design and improve readability
+      margin-block-end: $space-lg;
     }
 
     p,
