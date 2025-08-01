@@ -1,6 +1,7 @@
 /* Font Size Variables */
 $fs-xxs: 0.688rem; // 11px
 $fs-base: clamp(1rem, 0.28vi + 0.93rem, 1.19rem);
+$fs-sm: clamp(0.8rem, 0.14vi + 0.77rem, 0.89rem);
 $fs-md: clamp(1.25rem, 0.5vi + 1.13rem, 1.58rem);
 $fs-lg: clamp(1.56rem, 0.82vi + 1.37rem, 2.11rem);
 $fs-xxl: clamp(2.44rem, 1.96vi + 1.98rem, 3.75rem);
