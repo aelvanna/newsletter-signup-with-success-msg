@@ -65,9 +65,9 @@ function dismissSuccessMessage() {
   form.reset();
 }
 
-/* Add an event listener to the form__button to handle form submission */
+/* Adds an event listener to the form__button to handle form submission */
 form.addEventListener("submit", handleSubmit);
 
-/* Add an event listener to the success-message__button to remove the success message */
+/* Adds an event listener to the success-message__button to remove the success message */
 /* and display the header and form again. */
 dismissMsgButton.addEventListener("click", dismissSuccessMessage);
