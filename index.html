@@ -50,7 +50,7 @@
         <section class="form__input">
           <div class="form__label-wrapper">
             <label for="form__email" class="form__label">Email address</label>
-            <p class="form__error-message"></p>
+            <p class="form__error-message" id="form__email-error""></p>
           </div>
           <input
             class="form__field"
@@ -59,6 +59,8 @@
             placeholder="email@company.com"
             name="email"
             autocomplete="email"
+            aria-describedby="form__email-error"
+            aria-invalid="false"
           />
           <button type="submit" class="form__button">
             Subscribe to monthly newsletter
@@ -87,7 +89,7 @@
     </section>
     <footer class="attribution">
       Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank rel="noreferrer noopener"
         >Frontend Mentor</a
       >. Coded by <a href="https://www.lizafernandez.dev">Liza Fernandez</a>.
     </footer>
