@@ -41,7 +41,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/newsletter-sign-up-form-with-success-message-solution-NysTBE76yT](https://www.frontendmentor.io/solutions/newsletter-sign-up-form-with-success-message-solution-NysTBE76yT)
 - Live Site URL: [https://newsletter-form-sign-up-lf.netlify.app/](https://newsletter-form-sign-up-lf.netlify.app/)
 
 ## My process
